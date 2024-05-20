@@ -1,14 +1,22 @@
 {
-  "name": "elysia",
+  "name": "doomtyper_elysia",
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/cors": "^1.0.2",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "elysia": "latest",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/uuid": "^9.0.8",
     "bun-types": "latest"
   },
   "module": "src/index.js"

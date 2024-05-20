@@ -8,19 +8,16 @@ import {
   users,
   usersRelations,
 } from "./schema";
+import { DB_URL } from "../drizzle.config";
 // for migrations
-const migrationClient = postgres(
-  "postgresql://postgres:postgres@localhost:5432/postgres",
-  { max: 1 }
-);
+const migrationClient = postgres(DB_URL, { max: 1 });
 
 migrate(drizzle(migrationClient), {
   migrationsFolder: "drizzle",
 });
 // for query purposes
-const queryClient = postgres(
-  "postgresql://postgres:postgres@localhost:5432/postgres"
-);
+const queryClient = postgres(DB_URL);
+
 export const db = drizzle(queryClient, {
   schema: {
     games,
